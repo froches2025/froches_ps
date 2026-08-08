@@ -11,9 +11,10 @@ export function Hero() {
         <h1>Froches Pepper Sauce</h1>
         <p className="shitto-note">also known as shitto, if you already know, you know</p>
         <p className="hero-tagline">
-          A bold, smoky West African pepper sauce made with real fish and shrimp.
-          Spoon it over rice, eggs, grilled anything, or just eat it with a spoon
-          when no one&apos;s looking.
+          A bold, smoky West African pepper sauce, vegetarian-friendly by
+          default. Spoon it over rice, eggs, grilled anything, or just eat
+          it with a spoon when no one&apos;s looking. Want it with shrimp,
+          fish, or beef? Custom orders welcome.
         </p>
         <div className="hero-actions">
           <a

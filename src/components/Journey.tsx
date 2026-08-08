@@ -1,12 +1,10 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Image from "next/image";
 import type { ReactNode } from "react";
 import { WhatsAppIcon } from "./icons/WhatsAppIcon";
-import { PepperIcon } from "./icons/PepperIcon";
-import { FishIcon } from "./icons/FishIcon";
-import { ShrimpIcon } from "./icons/ShrimpIcon";
+import { IngredientBadge } from "./IngredientBadge";
+import { JourneyPhoto } from "./JourneyPhoto";
 import { WHATSAPP_URL } from "@/lib/constants";
 
 const revealVariants = {
@@ -23,9 +21,11 @@ type LineProps = {
   index: number;
   icon: ReactNode;
   text: string;
+  photoAlt: string;
+  photoSrc?: string;
 };
 
-function JourneyLine({ index, icon, text }: LineProps) {
+function JourneyLine({ index, icon, text, photoAlt, photoSrc }: LineProps) {
   return (
     <motion.div
       className="journey-line"
@@ -39,26 +39,35 @@ function JourneyLine({ index, icon, text }: LineProps) {
       </span>
       {icon}
       <p className="journey-line-text">{text}</p>
+      <JourneyPhoto src={photoSrc} alt={photoAlt} tone="muted" />
     </motion.div>
   );
 }
 
 const lines = [
   {
-    icon: <PepperIcon className="journey-line-icon" />,
+    icon: <IngredientBadge src="/images/fresh-chili.jpg" alt="Fresh chili pepper" />,
     text: `"Free food" hits different when you already know, deep down, it's going to be bland.`,
+    photoAlt: "Bland cafeteria tray",
+    photoSrc: "/images/free-food.jpg",
   },
   {
-    icon: <ShrimpIcon className="journey-line-icon" />,
+    icon: <IngredientBadge src="/images/seasoning.jpg" alt="Seasoning cube" />,
     text: "You ordered out. Paid full price. Ate every bite. Felt nothing.",
+    photoAlt: "Flavorless takeout meal",
+    photoSrc: "/images/takeout.jpg",
   },
   {
-    icon: <FishIcon className="journey-line-icon" />,
+    icon: <IngredientBadge src="/images/dripping-sauce.jpg" alt="Drop of pepper sauce" />,
     text: "Skipped a meal completely, not because there was no food, but because there was no pepper.",
+    photoAlt: "Untouched plate of food",
+    photoSrc: "/images/skipped-meal.jpg",
   },
   {
-    icon: <PepperIcon className="journey-line-icon" />,
+    icon: <IngredientBadge src="/images/fresh-chili.jpg" alt="Fresh chili pepper" />,
     text: "Looked at a full plate and sighed, because eating bland food to survive isn't the same as eating.",
+    photoAlt: "Full plate, unappetizing",
+    photoSrc: "/images/untouched-food.jpg",
   },
 ];
 
@@ -66,7 +75,14 @@ export function Journey() {
   return (
     <div className="journey">
       {lines.map((line, i) => (
-        <JourneyLine key={i} index={i + 1} icon={line.icon} text={line.text} />
+        <JourneyLine
+          key={i}
+          index={i + 1}
+          icon={line.icon}
+          text={line.text}
+          photoAlt={line.photoAlt}
+          photoSrc={line.photoSrc}
+        />
       ))}
 
       <motion.div
@@ -78,25 +94,22 @@ export function Journey() {
       >
         <span className="journey-line-index">05 / 05</span>
         <div className="journey-icon-row">
-          <PepperIcon className="journey-line-icon" />
-          <FishIcon className="journey-line-icon" />
-          <ShrimpIcon className="journey-line-icon" />
+          <IngredientBadge src="/images/fresh-chili.jpg" alt="Fresh chili pepper" />
+          <IngredientBadge src="/images/seasoning.jpg" alt="Seasoning cube" />
+          <IngredientBadge src="/images/dripping-sauce.jpg" alt="Drop of pepper sauce" />
         </div>
         <p className="journey-line-text">
-          You didn&apos;t move continents to eat like this.
+          You didn&apos;t move countries to eat like this.
         </p>
         <p className="journey-resolution-sub">
-          Real pepper. Real fish and shrimp. The taste of home, in a bottle
-          small enough for your dorm shelf.
+          Real pepper. Real flavor. The taste of home, in a bottle small
+          enough for your dorm shelf.
         </p>
-        <div className="hero-image-slot photo-frame">
-          <Image
-            src="/images/about_sauce.jpg"
-            alt="Froches Pepper Sauce"
-            fill
-            sizes="(max-width: 420px) 100vw, 420px"
-          />
-        </div>
+        <JourneyPhoto
+          src="/images/appetizing-food.jpg"
+          alt="Froches Pepper Sauce, warm and vivid"
+          tone="vivid"
+        />
         <a className="btn btn-primary" href={WHATSAPP_URL} target="_blank" rel="noopener">
           <WhatsAppIcon className="btn-icon" />
           Order on WhatsApp

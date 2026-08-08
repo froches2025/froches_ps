@@ -38,8 +38,9 @@ export function Pricing() {
           ⚠️
         </span>
         <span>
-          <strong>Contains fish and shrimp.</strong> Please check before
-          ordering if you have a seafood allergy.
+          <strong>Vegetarian-friendly, contains seasoning cubes.</strong> No
+          fish, shrimp, or animal products by default — want it with shrimp,
+          fish, or beef mixed in? Ask about a custom order.
         </span>
       </div>
 
