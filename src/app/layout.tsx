@@ -13,10 +13,35 @@ const displayFont = Playfair_Display({
   subsets: ["latin"],
 });
 
+const title = "Froches Pepper Sauce";
+const description =
+  "Froches Pepper Sauce — a West African pepper sauce made fresh in Kigali. Order on WhatsApp.";
+
 export const metadata: Metadata = {
-  title: "Froches Pepper Sauce",
-  description:
-    "Froches Pepper Sauce — a West African pepper sauce made fresh in Kigali. Order on WhatsApp.",
+  metadataBase: new URL("https://sauce.froches.tech"),
+  title,
+  description,
+  openGraph: {
+    title,
+    description,
+    url: "https://sauce.froches.tech",
+    siteName: title,
+    type: "website",
+    images: [
+      {
+        url: "/images/hero.png",
+        width: 1376,
+        height: 768,
+        alt: "Froches Pepper Sauce bottle",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title,
+    description,
+    images: ["/images/hero.png"],
+  },
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
