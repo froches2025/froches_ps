@@ -95,35 +95,7 @@ section {
   border: 2px solid var(--cream-faint);
 }
 
-/* Image placeholders */
-.image-slot {
-  background:
-    repeating-linear-gradient(
-      45deg,
-      rgba(248, 237, 224, 0.05),
-      rgba(248, 237, 224, 0.05) 10px,
-      rgba(248, 237, 224, 0.02) 10px,
-      rgba(248, 237, 224, 0.02) 20px
-    );
-  border: 2px dashed var(--turmeric);
-  border-radius: var(--radius);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 20px;
-}
-
-.image-slot-label {
-  font-size: 0.8rem;
-  font-weight: 600;
-  color: var(--cream);
-  background: rgba(21, 3, 4, 0.55);
-  padding: 6px 14px;
-  border-radius: 999px;
-}
-
-/* Real photos — same footprint as .image-slot, no dashed border */
+/* Real photos */
 .photo-frame {
   position: relative;
   overflow: hidden;

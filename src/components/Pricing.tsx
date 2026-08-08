@@ -1,4 +1,4 @@
-import { ImageSlot } from "./ImageSlot";
+import Image from "next/image";
 
 const sizes = [
   {
@@ -6,18 +6,21 @@ const sizes = [
     price: "3,000 RWF",
     desc: "Everyday / grab-and-go size",
     featured: false,
+    image: "/images/small.png",
   },
   {
     size: "150ml",
     price: "5,900 RWF",
     desc: "Regular household size",
     featured: true,
+    image: "/images/medium.png",
   },
   {
     size: "550ml",
     price: "17,000 RWF",
     desc: "Bulk size — best value per ml",
     featured: false,
+    image: "/images/large.png",
   },
 ];
 
@@ -47,7 +50,14 @@ export function Pricing() {
             className={`price-card ${s.featured ? "price-card-featured" : ""}`}
           >
             {s.featured && <p className="price-badge">Most popular</p>}
-            <ImageSlot label={`${s.size} bottle photo`} className="price-image-slot" />
+            <div className="price-image-slot photo-frame">
+              <Image
+                src={s.image}
+                alt={`${s.size} bottle of Froches Pepper Sauce`}
+                fill
+                sizes="(max-width: 720px) 90vw, 320px"
+              />
+            </div>
             <h3>{s.size}</h3>
             <p className="price-tag">{s.price}</p>
             <p className="price-desc">{s.desc}</p>
