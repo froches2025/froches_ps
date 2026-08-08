@@ -15,7 +15,7 @@ const displayFont = Playfair_Display({
 
 const title = "Froches Pepper Sauce";
 const description =
-  "Froches Pepper Sauce — a West African pepper sauce made fresh in Kigali. Order on WhatsApp.";
+  "Froches Pepper Sauce: a West African pepper sauce made fresh in Kigali. Order on WhatsApp.";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://sauce.froches.tech"),

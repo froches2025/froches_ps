@@ -102,8 +102,8 @@ export function Journey() {
           You didn&apos;t move countries to eat like this.
         </p>
         <p className="journey-resolution-sub">
-          Real pepper. Real flavor. The taste of home, in a bottle small
-          enough for your dorm shelf.
+          Real pepper. Real flavor. The taste of home, in a 45ml bottle
+          small enough to slip in your backpack.
         </p>
         <JourneyPhoto
           src="/images/appetizing-food.jpg"

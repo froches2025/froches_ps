@@ -18,7 +18,7 @@ const sizes = [
   {
     size: "550ml",
     price: "17,000 RWF",
-    desc: "Bulk size — best value per ml",
+    desc: "Bulk size, best value per ml",
     featured: false,
     image: "/images/large.jpg",
   },
@@ -29,7 +29,7 @@ export function Pricing() {
     <section className="pricing" id="sizes">
       <h2>Sizes &amp; pricing</h2>
       <p className="pricing-sub">
-        Shelf-stable at room temperature for 2 months with regular use — no
+        Shelf-stable at room temperature for 2 months with regular use, no
         fridge required.
       </p>
 
@@ -39,7 +39,7 @@ export function Pricing() {
         </span>
         <span>
           <strong>Vegetarian-friendly, contains seasoning cubes.</strong> No
-          fish, shrimp, or animal products by default — want it with shrimp,
+          fish, shrimp, or animal products by default. Want it with shrimp,
           fish, or beef mixed in? Ask about a custom order.
         </span>
       </div>

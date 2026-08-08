@@ -30,7 +30,7 @@ export function JourneyPhoto({ src, alt, tone }: JourneyPhotoProps) {
         />
       ) : (
         <div className="journey-photo-fallback">
-          <span className="journey-photo-fallback-label">🖼️ {alt} — photo pending</span>
+          <span className="journey-photo-fallback-label">🖼️ {alt} (photo pending)</span>
         </div>
       )}
     </div>
