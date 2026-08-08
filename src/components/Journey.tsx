@@ -91,7 +91,7 @@ export function Journey() {
         </p>
         <div className="hero-image-slot photo-frame">
           <Image
-            src="/images/about_sauce.png"
+            src="/images/about_sauce.jpg"
             alt="Froches Pepper Sauce"
             fill
             sizes="(max-width: 420px) 100vw, 420px"

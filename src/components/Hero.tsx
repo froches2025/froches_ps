@@ -32,7 +32,7 @@ export function Hero() {
       </div>
       <div className="hero-image-slot photo-frame">
         <Image
-          src="/images/hero.png"
+          src="/images/hero.jpg"
           alt="Froches Pepper Sauce bottle"
           fill
           sizes="(max-width: 420px) 100vw, 420px"

@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/images/hero.png",
+        url: "/images/hero.jpg",
         width: 1376,
         height: 768,
         alt: "Froches Pepper Sauce bottle",
@@ -40,7 +40,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title,
     description,
-    images: ["/images/hero.png"],
+    images: ["/images/hero.jpg"],
   },
 };
 

@@ -6,21 +6,21 @@ const sizes = [
     price: "3,000 RWF",
     desc: "Everyday / grab-and-go size",
     featured: false,
-    image: "/images/small.png",
+    image: "/images/small.jpg",
   },
   {
     size: "150ml",
     price: "5,900 RWF",
     desc: "Regular household size",
     featured: true,
-    image: "/images/medium.png",
+    image: "/images/medium.jpg",
   },
   {
     size: "550ml",
     price: "17,000 RWF",
     desc: "Bulk size — best value per ml",
     featured: false,
-    image: "/images/large.png",
+    image: "/images/large.jpg",
   },
 ];
 
