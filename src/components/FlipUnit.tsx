@@ -9,11 +9,10 @@ function pad(n: number) {
 
 type FlipUnitProps = {
   value: number;
-  label: string;
 };
 
 /** One split-flap card (e.g. "05"). Top half mechanically flips down to reveal a new value. */
-export function FlipUnit({ value, label }: FlipUnitProps) {
+export function FlipUnit({ value }: FlipUnitProps) {
   const [prevValue, setPrevValue] = useState(value);
 
   useEffect(() => {
@@ -26,27 +25,24 @@ export function FlipUnit({ value, label }: FlipUnitProps) {
   const previous = pad(prevValue);
 
   return (
-    <div className="flip-unit">
-      <div className="flip-card">
-        <div className="flip-half flip-half-top flip-half-back">
-          <span>{current}</span>
-        </div>
-        <div className="flip-half flip-half-bottom">
-          <span>{current}</span>
-        </div>
-        {previous !== current && (
-          <motion.div
-            key={current}
-            className="flip-half flip-half-top flip-half-front"
-            initial={{ rotateX: 0 }}
-            animate={{ rotateX: -90 }}
-            transition={{ duration: 0.38, ease: [0.45, 0, 0.55, 1] }}
-          >
-            <span>{previous}</span>
-          </motion.div>
-        )}
+    <div className="flip-card">
+      <div className="flip-half flip-half-top flip-half-back">
+        <span>{current}</span>
       </div>
-      <span className="flip-unit-label">{label}</span>
+      <div className="flip-half flip-half-bottom">
+        <span>{current}</span>
+      </div>
+      {previous !== current && (
+        <motion.div
+          key={current}
+          className="flip-half flip-half-top flip-half-front"
+          initial={{ rotateX: 0 }}
+          animate={{ rotateX: -90 }}
+          transition={{ duration: 0.38, ease: [0.45, 0, 0.55, 1] }}
+        >
+          <span>{previous}</span>
+        </motion.div>
+      )}
     </div>
   );
 }

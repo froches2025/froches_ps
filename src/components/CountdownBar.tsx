@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { useSyncExternalStore } from "react";
 import { FlipUnit } from "./FlipUnit";
 import { LAUNCH_DATE, PREORDER_WHATSAPP_URL } from "@/lib/constants";
@@ -77,19 +76,15 @@ export function CountdownBar() {
         <span className="countdown-live">We&apos;re live!</span>
       ) : (
         <div className="countdown-inner">
-          <Image
-            src="/images/fresh-chili.jpg"
-            alt=""
-            width={18}
-            height={18}
-            className="countdown-icon"
-          />
           <span className="countdown-copy">Official launch in</span>
           <div className="flip-clock">
-            <FlipUnit value={snapshot.days} label="d" />
-            <FlipUnit value={snapshot.hours} label="h" />
-            <FlipUnit value={snapshot.minutes} label="m" />
-            <FlipUnit value={snapshot.seconds} label="s" />
+            <FlipUnit value={snapshot.days} />
+            <span className="flip-separator">:</span>
+            <FlipUnit value={snapshot.hours} />
+            <span className="flip-separator">:</span>
+            <FlipUnit value={snapshot.minutes} />
+            <span className="flip-separator">:</span>
+            <FlipUnit value={snapshot.seconds} />
           </div>
           <span className="countdown-copy">.</span>
           <a

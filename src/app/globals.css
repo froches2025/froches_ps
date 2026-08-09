@@ -164,11 +164,6 @@ section {
   letter-spacing: 0.01em;
 }
 
-.countdown-icon {
-  border-radius: 4px;
-  opacity: 0.85;
-}
-
 .countdown-copy {
   white-space: nowrap;
 }
@@ -197,22 +192,15 @@ section {
   --flip-size: 22px;
   --flip-font-size: 0.72rem;
   display: flex;
-  align-items: flex-end;
-  gap: 4px;
-}
-
-.flip-unit {
-  display: flex;
-  flex-direction: column;
   align-items: center;
-  gap: 2px;
+  gap: 3px;
 }
 
-.flip-unit-label {
-  font-size: 0.55rem;
-  text-transform: uppercase;
+.flip-separator {
   color: var(--cream-faint);
-  letter-spacing: 0.04em;
+  font-family: ui-monospace, "SF Mono", "Roboto Mono", Menlo, monospace;
+  font-size: var(--flip-font-size);
+  line-height: 1;
 }
 
 .flip-card {
@@ -300,19 +288,10 @@ section {
     column-gap: 4px;
   }
 
-  .countdown-icon {
-    width: 14px;
-    height: 14px;
-  }
-
   .flip-clock {
     --flip-size: 17px;
     --flip-font-size: 0.6rem;
-    gap: 3px;
-  }
-
-  .flip-unit-label {
-    font-size: 0.5rem;
+    gap: 2px;
   }
 }
 
