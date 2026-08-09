@@ -59,7 +59,7 @@ const lines = [
   },
   {
     icon: <IngredientBadge src="/images/dripping-sauce.jpg" alt="Drop of pepper sauce" />,
-    text: "Skipped a meal completely, not because there was no food, but because there was no pepper.",
+    text: "Skipped a meal completely, not because there was no food, but because there was no flavour.",
     photoAlt: "Untouched plate of food",
     photoSrc: "/images/skipped-meal.jpg",
   },

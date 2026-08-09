@@ -108,7 +108,7 @@ section {
   object-fit: cover;
 }
 
-/* Nav */
+/* Nav (sticky header; countdown lives inside it as a second line) */
 .nav {
   position: sticky;
   top: 0;
@@ -121,10 +121,19 @@ section {
 .nav-inner {
   max-width: var(--max-width);
   margin: 0 auto;
-  padding: 14px 20px;
+  padding: 10px 20px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 12px;
+}
+
+.nav-left {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+  min-width: 0;
 }
 
 .nav-brand {
@@ -137,6 +146,128 @@ section {
   color: var(--chili-bright);
 }
 
+/* Countdown bar — ambient chrome, recedes into the hero below it */
+.countdown-bar {
+  display: block;
+  min-height: 18px;
+}
+
+.countdown-inner {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  row-gap: 2px;
+  column-gap: 5px;
+  font-size: 0.68rem;
+  color: var(--cream-faint);
+  letter-spacing: 0.01em;
+}
+
+.countdown-icon {
+  border-radius: 4px;
+  opacity: 0.85;
+}
+
+.countdown-copy {
+  white-space: nowrap;
+}
+
+.countdown-live {
+  font-size: 0.75rem;
+  color: var(--turmeric-light);
+  font-weight: 600;
+}
+
+.countdown-preorder {
+  color: var(--turmeric-light);
+  font-weight: 600;
+  text-decoration: underline;
+  text-decoration-color: rgba(232, 168, 60, 0.4);
+  text-underline-offset: 2px;
+  white-space: nowrap;
+}
+
+.countdown-preorder:hover {
+  text-decoration-color: var(--turmeric-light);
+}
+
+/* Flip clock */
+.flip-clock {
+  --flip-size: 22px;
+  --flip-font-size: 0.72rem;
+  display: flex;
+  align-items: flex-end;
+  gap: 4px;
+}
+
+.flip-unit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+}
+
+.flip-unit-label {
+  font-size: 0.55rem;
+  text-transform: uppercase;
+  color: var(--cream-faint);
+  letter-spacing: 0.04em;
+}
+
+.flip-card {
+  position: relative;
+  width: var(--flip-size);
+  height: var(--flip-size);
+  perspective: 120px;
+}
+
+.flip-half {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 50%;
+  overflow: hidden;
+  background: rgba(248, 237, 224, 0.06);
+  display: flex;
+  justify-content: center;
+}
+
+.flip-half span {
+  display: block;
+  width: 100%;
+  height: var(--flip-size);
+  line-height: var(--flip-size);
+  text-align: center;
+  font-family: ui-monospace, "SF Mono", "Roboto Mono", Menlo, monospace;
+  font-variant-numeric: tabular-nums;
+  font-weight: 700;
+  font-size: var(--flip-font-size);
+  color: var(--turmeric-light);
+}
+
+.flip-half-top {
+  top: 0;
+  border-bottom: 1px solid rgba(21, 3, 4, 0.5);
+  border-radius: 3px 3px 0 0;
+}
+
+.flip-half-bottom {
+  bottom: 0;
+  border-radius: 0 0 3px 3px;
+}
+
+.flip-half-bottom span {
+  margin-top: calc(var(--flip-size) / -2);
+}
+
+.flip-half-front {
+  backface-visibility: hidden;
+  transform-origin: bottom center;
+  background: rgba(248, 237, 224, 0.09);
+  z-index: 1;
+}
+
 .nav-cta {
   text-decoration: none;
   background: var(--chili);
@@ -145,6 +276,44 @@ section {
   border-radius: 999px;
   font-size: 0.9rem;
   font-weight: 700;
+  flex-shrink: 0;
+}
+
+/* Narrow phones: shrink the two-line nav (wordmark + countdown) rather
+   than letting the countdown row wrap mid flip-card or mid word. */
+@media (max-width: 420px) {
+  .nav-inner {
+    padding: 8px 14px;
+  }
+
+  .nav-brand {
+    font-size: 0.95rem;
+  }
+
+  .nav-cta {
+    padding: 7px 12px;
+    font-size: 0.82rem;
+  }
+
+  .countdown-inner {
+    font-size: 0.6rem;
+    column-gap: 4px;
+  }
+
+  .countdown-icon {
+    width: 14px;
+    height: 14px;
+  }
+
+  .flip-clock {
+    --flip-size: 17px;
+    --flip-font-size: 0.6rem;
+    gap: 3px;
+  }
+
+  .flip-unit-label {
+    font-size: 0.5rem;
+  }
 }
 
 /* Hero */

@@ -47,7 +47,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang="en" className={`${bodyFont.variable} ${displayFont.variable}`}>
-      <body>
+      <body suppressHydrationWarning>
         <SmoothScroll />
         {children}
       </body>
