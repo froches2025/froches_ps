@@ -1,23 +1,27 @@
 import Image from "next/image";
+import { PriceTag } from "./PriceTag";
 
 const sizes = [
   {
     size: "45ml",
-    price: "3,000 RWF",
+    launchPrice: "3,000 RWF",
+    regularPrice: "3,335 RWF",
     desc: "Everyday / grab-and-go size",
     featured: false,
     image: "/images/small.jpg",
   },
   {
     size: "150ml",
-    price: "5,900 RWF",
+    launchPrice: "7,200 RWF",
+    regularPrice: "8,000 RWF",
     desc: "Regular household size",
     featured: true,
     image: "/images/medium.jpg",
   },
   {
     size: "550ml",
-    price: "17,000 RWF",
+    launchPrice: "21,600 RWF",
+    regularPrice: "24,000 RWF",
     desc: "Bulk size, best value per ml",
     featured: false,
     image: "/images/large.jpg",
@@ -60,7 +64,7 @@ export function Pricing() {
               />
             </div>
             <h3>{s.size}</h3>
-            <p className="price-tag">{s.price}</p>
+            <PriceTag launchPrice={s.launchPrice} regularPrice={s.regularPrice} />
             <p className="price-desc">{s.desc}</p>
           </div>
         ))}

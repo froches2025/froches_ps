@@ -583,6 +583,28 @@ section {
   margin-bottom: 0.2em;
 }
 
+.price-tag-group {
+  margin-bottom: 0.2em;
+}
+
+.price-tag-group .price-tag {
+  margin-bottom: 0.1em;
+}
+
+.price-tag-regular {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--cream-faint);
+  text-decoration: line-through;
+  margin-left: 4px;
+}
+
+.price-tag-launch-note {
+  font-size: 0.75rem;
+  color: var(--turmeric-light);
+  margin-bottom: 0;
+}
+
 .price-desc {
   font-size: 0.9rem;
   margin-bottom: 0;

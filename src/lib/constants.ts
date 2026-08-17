@@ -9,3 +9,6 @@ export const INSTAGRAM_HANDLE = "@froches_";
 
 /** Official launch instant (Kigali time, CAT/UTC+2). Keep in sync with CLAUDE.md. */
 export const LAUNCH_DATE = "2026-08-14T00:00:00+02:00";
+
+/** Regular pricing takes effect at this instant (Kigali time). Keep in sync with CLAUDE.md. */
+export const REGULAR_PRICE_START = "2026-08-22T00:00:00+02:00";
